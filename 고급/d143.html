@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM 속성과 태그 속성 이해하기 예제</title>
+</head>
+<body>
+    <div id="div1" class="div-class">DIV 태그</div>
+    <input type="text" id="input1" value='jay'>
+
+    <script>
+        const div1El = document.getElementById('div1');
+        const input1 = document.getElementById('input1');
+
+        console.log(div1El.hasAttribute('id')); // id 속성이 있는가? true / false
+        console.log(div1El.getAttribute('id')); // id 속성의 이름은?  
+        console.log(div1El.id); // = div1El.getAttribute('id')
+
+        div1El.removeAttribute('id');
+        console.log(div1El.id);
+        div1El.setAttribute('id','new-id');
+        console.log(div1El.id);
+
+        div1El.id = 'new-id-2';
+        console.log(div1El.getAttribute('id'));
+
+        console.log(div1El.getAttribute('class'));
+        console.log(div1El.className);
+        div1El.className = 'new-div-class2';
+        console.log(div1El.getAttribute('class'));
+
+        const valueAttr = input1.getAttribute('value');
+        console.log(valueAttr);
+        console.log(input1.value);
+
+        input1.value = 'jay2';
+        console.log(input1.getAttribute('value')); //  value 값은 변경안됨
+    </script>
+</body>
+</html>
