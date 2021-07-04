@@ -1,0 +1,28 @@
+java - 무겁고 어려움
+Scheme 를 이용하여 java 스럽게 문법을 만들어보자 -> mocha -> liveScript -> 이름변경 : javascript 1995년도
+microsoft - netscape 리버싱 엔지니어링 하여 Jscript 만듦
+
+개발자들이 어려움에 빠짐. 
+
+ECMAScript - javascript를 체계적으로 규정하자
+
+2000 년도 internetExplorer 확대 - 표준화진행에 microsoft 빠짐
+표준하가 주춤됨
+
+2004년도 jesseJamesGarrett  - AJAX 도입 
+
+다양한 브라우저들 출시  -> 커뮤니티 형성 -> jQuery, dojo .. 
+
+그중 wite less, do more 강조하는 jQuery (라이브러리) 가 강세  API 
+
+
+2008 chrome 브라우저 -> Just-in -time compilation JIT 
+2015 ECMAScript6  출시!!
+
+따라서 현재는 jQuery라이브러리 사용하지 않아도 잘 됨 
+
+Babel - transCompiler
+SPA - Single Page Application (vue, react, angular)
+
+node.js  Backend 
+
