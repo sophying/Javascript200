@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"
+        integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <script>
+        $(function () {
+            $(window).on('scroll', () => {
+                let sc_top = $(this).scrollTop();
+                let sc_left = $(this).scrollLeft();
+
+                $('.top').text(sc_top);
+                $('.left').text(sc_left);
+            })
+        })
+    </script>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <p><span class="top">0</span>px</p>
+        <p><span class="left">0</span>px</p>
+    </div>
+    <div>
+        <h1>sfsf</h1>
+    </div>
+    <div>
+        <h1>sfsf</h1>
+    </div>
+    <div>
+        <h1>sfsf</h1>
+    </div>
+    <div>
+        <h1>sfsf</h1>
+    </div>
+    <div>
+        <h1>sfsf</h1>
+    </div>
+    <div>
+        <h1>sfsf</h1>
+    </div>
+</body>
+
+</html>

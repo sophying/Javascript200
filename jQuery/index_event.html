@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"
+        integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <script>
+        $(function () {
+            $('.menuWrap_1 a').on('click', function (e) {
+                e.preventDefault();
+                $('.menuWrap_1 a').css({
+                    'background-color': 'pink'
+                })
+
+                $(this).css({
+                    'background-color': 'green'
+                })
+
+            })
+            $('.menuWrap_2 a').on('click', function (e) {
+                e.preventDefault();
+                $('.menuWrap_2 a').css({
+                    'background-color': 'skyblue'
+                })
+                // 현재 선택된 a 태그(this)의 index 값 = index(this)
+                let idx = $('.menuWrap_2 a').index(this);
+                $('.menuWrap_2 a').eq(idx).css({ // eq(index) 동일한 위치의 값을 가져옴 
+                    'background-color': 'blue'
+                })
+                $('.idxNum').text(idx);
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <h2>$(this)</h2>
+    <ul class="menuWrap_1">
+        <li><a href="#">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+        </li>
+    </ul>
+    <h2>index()</h2>
+    <ul class="menuWrap_2">
+        <li><a href="#">4</a>
+            <a href="#">5</a>
+            <a href="#">6</a>
+        </li>
+    </ul>
+    <p class="idxNUm"></p>
+</body>
+
+</html>

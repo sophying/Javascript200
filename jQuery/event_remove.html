@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"
+        integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
+    <script>
+        $(function () {
+            $('.btn_1').on('mouseover', function () {
+                alert('hello');
+            });
+            $(document).on('mouseover', '.btn_2', function () {
+                alert('welcome');
+            });
+
+            let btn_2 = $('<p><button class=\"btn_2\">버튼2</button></p>');
+            $('#wrap').append(btn_2); // wrap 에 속한 요소 뒤에 추가함 
+
+            // 이벤트 제거 
+            $('.del_1').on('click', function () {
+                $('.btn_1').off('mouseover');
+            });
+
+            $('.del_2').on('click', function () {
+                $(document).off('mouseover', '.btn_2');
+            })
+
+
+        })
+    </script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="wrap">
+        <p><button class="btn_1">버튼1</button></p>
+    </div>
+    <p>
+        <button class="del_1">버튼1 Event Remove</button>
+        <button class="del_2">버튼2 Event Remove</button>
+    </p>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"
+        integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <script>
+        $(function () {
+            // read : HTML 에 전체 요소가 로딩되면 이벤트 헬들러 실행 
+            // 0 이 나오는 이유는 외부 소스 로드가 되기 전에 실행되었으므로 
+            $(document).ready(function () {
+                let h1 = $('.img1').height();
+                console.log(h1);  // 0
+            })
+
+            // load : 외부 소스가 완전히 로드가 될 떄까지 기다렸다가 
+            // 완전히 로드가 되면 이벤트 실행
+            // 외부소스 로드 완료 수 값이 들어온 상태에서 실행 
+            $(window).load(function () {
+                let h2 = $('.img1').height();
+                console.log(h2);  // 300 
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <p>
+        <img src="http://place-hold.it/300X300" alt="img1" class='img1'>
+    </p>
+</body>
+
+</html>l

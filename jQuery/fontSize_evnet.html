@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"
+        integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <script>
+        $(function () {
+            let baseFontSize = 14;
+            $('.zoomBtnZone button').on('click', zoomInOut);
+            function zoomInOut() {
+                if ($(this).hasClass('zoomOutBtn')) {
+                    if (baseFontSize <= 8) return false;
+
+                    baseFontSize--;
+                } else if ($(this).hasClass('zoomInBtn')) {
+                    if (baseFontSize >= 20) return false;
+
+                    baseFontSize++;
+                } else {
+                    baseFontSize = 14;
+                }
+                $('.fontSize').text(`${baseFontSize} px`);
+                $('body').css({ fontSize: baseFontSize + 'px' })
+            }
+
+        })
+    </script>
+</head>
+
+<body>
+    <p class="zoomBtnZone">
+        <button class='zoomOutBtn'>-</button>
+        <button class='originBtn'>100%</button>
+        <button class='zoomInBtn'>+</button>
+    </p>
+    <p class="fontSize">14px</p>
+    <div id="wrap">
+        글자 크기를 줄이고 확대하는 것을 내맘대로 해볼까요~?!!!
+    </div>
+</body>
+
+</html>
