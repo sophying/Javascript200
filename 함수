@@ -7,10 +7,24 @@
 # jQuery 효과
  1. fadeOut() : 요소가 점점 투명해지면서 사라짐
  2. fadeIn() :  요소가 점점 선명해짐
+    - .fadeIn(1000, 'swing', function(){}) 
+    - swing : default value 시작과 끝은 느리되 중간은 빠름
+    - linear : 일정한 속도
+    
  3. slideUp() : 요소가 위로 접히면서 사라짐 
+    - .slideUp(1000, 'linear', function(){}) 
+    
  4. slideDown() : 숨겨진 요소가 아래로 펼쳐짐 
  5. fadeToggle() : fadein() / fadeOut() 효과 
  6. slideToggle() : slideUp() / slideDown() 효과
  7. fadeTo() : 선명도  ex. fadeTo('fast|slow', 0.0 ~ 1)
     - 0 : 투명 
     - 1 : 선명
+
+
+
+
+
+
+
+
