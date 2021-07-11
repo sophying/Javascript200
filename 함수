@@ -20,7 +20,12 @@
  7. fadeTo() : 선명도  ex. fadeTo('fast|slow', 0.0 ~ 1)
     - 0 : 투명 
     - 1 : 선명
-
+    
+ 8. $('요소선택').animate({스타일속성}, 적용시간 , 가속도, 콜백함수)
+    - 스타일속성 :marginLeft: '500px',  fontSize: '300px',
+    - 적용시간 : ms 
+    - 가속도 : linear
+    - 콜백함수 : 함수정의
 
 
 
