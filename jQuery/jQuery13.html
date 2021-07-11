@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"
+        integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <script>
+        $(function () {
+            let style = {
+                "background-color": 'pink',
+                'border': '1px solid gray'
+            }
+            $('.txt1').closest('div').css(style)
+        })
+    </script>
+</head>
+
+<body>
+    <h1 class="title">선택자</h1>
+    <div>
+        <div> closet('div')
+            <p class='txt1'>내용</p>
+        </div>
+    </div>
+</body>
+
+</html>

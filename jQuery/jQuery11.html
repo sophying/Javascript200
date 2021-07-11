@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"
+        integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <script>
+        $(function () {
+            let style = {
+                "background-color": 'pink',
+                'border': '1px solid gray'
+            }
+            // 모든 형제 요소 선택
+            $('.txt1').prevUntil('.title').css(style)
+            $('.txt1').nextUntil('.txt2').css('color', 'green')
+        })
+    </script>
+</head>
+
+<body>
+    <div id="wrap">
+        <h1>인접 관계 선택자</h1>
+        <p>내용1</p>
+        <section>
+            <h3 class='title'>자식요소 선택자</h3>
+            <h2>자식요소 선택자</h2>
+            <h1>자식요소 선택자</h1>
+            <p class='txt1'>내용2</p>
+            <div>div ---</div>
+            <p>내용3</p>
+            <p>내용4</p>
+            <p class='txt2'>내용5</p>
+            <p>내용6</p>
+        </section>
+    </div>
+</body>
+
+</html>

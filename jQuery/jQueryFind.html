@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"
+        integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <script>
+        $(function () {
+            $('#inner_1').find('.txt1').css('color', ' pink')
+        })
+    </script>
+</head>
+
+<body>
+    <div id="outer_wrap">
+        <h1>콘텐츠 탐색 선탁자</h1>
+        <section id="inner_1">
+            <h2>find(), filter()</h2>
+            <p class="txt1">내용1</p>
+            <p class="txt2">내용2</p>
+        </section>
+        <section id="inner_2">
+            <h2>filter(function)</h2>
+            <p>index1</p>
+            <p>index2</p>
+            <p>index3</p>
+            <p>index4</p>
+        </section>
+    </div>
+</body>
+
+</html>

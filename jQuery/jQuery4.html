@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"
+        integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <script>
+        $(function () {
+            $("div#inner_wrap").parent().css('background', 'skyblue');
+            $('h2#tit').next().css('color', 'blue')
+        })
+    </script>
+</head>
+
+<body>
+    <div id=wrap>
+        <div id='inner_wrap'>
+            <h1>제이쿼리</h1>
+            <h2 id='tit'>선택자</h2>
+            <p>P Tag</p>
+            <h3>직접선택자</h3>
+        </div>
+    </div>
+</body>
+
+</html>
