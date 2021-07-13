@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"
+        integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <ul id="listZone">
+        <li>리스트</li>
+    </ul>
+    <script>
+        $(function () {
+            $('<li>appendTo</li>').appendTo('#listZone'); // 뒤에 붙임
+            $('#listZone').prepend('<li>prepend</li>'); // 앞에 붙임
+
+        })
+    </script>
+</body>
+
+</html>

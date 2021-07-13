@@ -1,4 +1,3 @@
-ue
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,20 +21,26 @@ ue
                 'name': '빅마마'
             }]
 
-            let arr2 = $.map(arr1, (a, b) => {
-                if (a.area == '서울') {
-                    return a;
+            // $.map(배역, function(배열obj, 배열index){})
+            let arr2 = $.map(arr1, (obj, index) => {
+                console.log(obj);
+                console.log(index);
+                if (obj.area == '서울') {
+                    return obj;
                 }
             });
             console.log(arr2);
 
-            let arr3 = $.grep(arr1, (a, b) => {
-                if (a.area == '서울') {
+            // $.grep(배열, (배열obj, 배열index) =>{}, invert)
+            // invert : default 는 true 반환하도록 false 가 설정되어있음  / 만을 true 로 설정하면 false 인 값 반환 
+            let arr3 = $.grep(arr1, (obj, index) => {
+                console.log(index);
+                if (obj.area == '서울') {
                     return true;
                 } else {
                     return false;
                 }
-            });
+            }, false);
             console.log(arr3)
 
 

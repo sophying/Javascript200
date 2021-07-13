@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"
+        integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>
+        <strong>객체 조작 및 생성</strong>
+    </h1>
+    <section id="sec_1">
+        <h2>이미지 속성</h2>
+        <button id='change_btn'>Change</button>
+        <p>
+            <img src="./img/Lovely.png" alt="logo" style="border: 2px solid black;">
+        </p>
+    </section>
+    <script>
+        $(function () {
+            let srcVal = $('#sec_1 img').attr('src');
+            console.log(srcVal);
+
+            $('#change_btn').on('click', function () {
+
+                $('#sec_1 img').attr({
+                    'width': 300,
+                    'src': srcVal.replace(".png", "-removebg.png"),
+                    'alt': 'removebg-logo'
+                }).removeAttr('style');
+
+            })
+        })
+    </script>
+</body>
+
+</html>
