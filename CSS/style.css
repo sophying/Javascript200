@@ -1,0 +1,25 @@
+*{
+    /* 글자를 세로로 중앙정렬 할 때 */
+    height: 100px;
+    line-height: 100px;
+
+    /* text 밑줄 */
+    text-decoration: none; /*밑줄효과 없음*/
+    text-decoration: underline; /*밑줄*/
+    text-decoration: overline; /*윗줄*/
+    text-decoration: line-through; /*취소선*/
+
+    /* 가로거리, 세로거리, 번짐정도, 색상 */
+    text-shadow: 1px 1px 1px pink;
+
+    /* 리스트 스타일처럼 앞에 이미지를 숫자대신 활용 */
+    list-style-image: url(../jQuery/method/img/Lovely.png);
+    list-style-type: none; 
+    /*
+      none , disc(검은동그라미), circle(하얀동그라미), square(검은네모), decimal(1,2,..),decimal-leading-zero(01,02..)
+      lower-roman(로마숫자 소문자), upper-roman(로마숫자 대문자) , lower-alpha(소문자알파벳),, upper-alpha(대문자알파벳)
+    */
+
+    /* inside(들여쓰기) , outside(default) */
+    list-style-position: inside;
+}
