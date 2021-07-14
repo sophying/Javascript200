@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .border_box {
+            /* 
+            border 를 기준으로 border를 포함한 전체 width 200 (already padding + border)
+            따라서, 안에 content box 는 200 - padding 40 - border 20 
+            */
+            box-sizing: border-box;
+            width: 200px;
+            height: 100px;
+            padding: 20px;
+            border: 10px solid orange;
+            margin: auto;
+            text-align: center;
+            /* Total width: 200px
+                Total height: 100px
+                Content box width: 200px - (2 * 20px) - (2 * 10px) = 140px
+                Content box height: 100px - (2 * 20px) - (2 * 10px) = 40px */
+        }
+
+        .content_box {
+            /* 
+            콘텐츠 기준으로 width 200 
+            따라서, 박스의 전체 크기의 width = 200 + padding 40 + border 20 
+            */
+            box-sizing: content-box;
+            width: 200px;
+            height: 100px;
+            padding: 20px;
+            border: 10px solid blue;
+            margin: auto;
+            margin-top: 20px;
+            text-align: center;
+            /* Total width: 200px + (2 * 20px) + (2 * 10px) = 260px
+                Total height: 100px + (2 * 20px) + (2 * 10px) = 160px
+                Content box width: 200px
+                Content box height: 100px */
+        }
+
+        span {
+            margin: auto;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="border_box"><span class='txt1'></span></div>
+    <div class="content_box"><span class="txt2"></span></div>
+    <script>
+        addEventListener('load', () => {
+            const box1 = document.querySelector('.border_box');
+            const box2 = document.querySelector('.content_box');
+            const txt1 = document.querySelector('.txt1');
+            const txt2 = document.querySelector('.txt2');
+            txt1.innerHTML = `Border-box <br>width : ${box1.getBoundingClientRect().width}, <br>height : ${box1.getBoundingClientRect().height}`;
+            txt2.innerHTML = `Content-box <br>width : ${box2.getBoundingClientRect().width}, <br>height : ${box2.getBoundingClientRect().height}`;
+
+            console.log(box1.getBoundingClientRect());
+            console.log(box2.getBoundingClientRect());
+        })
+
+    </script>
+</body>
+
+</html>
