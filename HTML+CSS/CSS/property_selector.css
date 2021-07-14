@@ -1,0 +1,51 @@
+
+section p {}
+/* 하위요소 p의 자식요소의 자식들까지 모두 선택 */
+
+section > p {}  
+/* 바로 한단계 아래 요소인 p에만 적용하기 위함 */
+
+h1 + p {} 
+/* h1의 형제인 p요소 첫번째만 선택  */
+
+h1 ~ p {}
+/* : h1의 형제인 모든 p요소 */
+
+a[href]{}
+/* href 속성을 가진 a태그만 선택 */
+
+a[target="_blank"]
+/* a 태그의 target이 _blank 인 요소 선택 */
+
+[class ~= "button"]{}
+ /* class=""요소가 가지고 있는 여러 속성 중 button 이라는 단어를 가지고있는 요소 선택 */
+ 
+
+a[title |= "us"]{}
+/* title 속성 값 속에 us 를 포함한 단어를 가진 요소 선택 */
+
+a[title ^= "eng"]{}
+/* a요소 속 title 속성중 eng 로 시작하는 값 찾아 선책  */
+
+a[href$=hwp] { }
+/* 연결한 파일의 확장자가 hwp인 링크 */
+
+a[href *= "w3"] { } 
+/* href 속성값 중에 w3가 있는 a 요소를 찾는 선택자  */
+
+#enroll input[required]{}
+/* input 속성 중 필수 입력 요소 선택 */
+
+#enroll input[readonly]{}
+/* input 속성 중 읽기전용 선택  */
+
+#enroll input[type='tel'], #enroll input[type='password']
+, #enroll input[type='number'] {}
+
+
+
+/* 가상 클래스와 가상 요소  */
+/* 사용자가 클릭 또는 어떠한 모션을 취했을 때 적용을 하고 싶다면 :hover 등과 같은 요소를 적용함 */
+
+
+
