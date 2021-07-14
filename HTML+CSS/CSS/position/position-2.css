@@ -1,0 +1,26 @@
+* {
+  box-sizing: border-box;
+  margin:0;
+  padding:0;
+}  
+#contents {
+ background:url("../images/bg.jpg") no-repeat;
+ background-size:cover;
+ width:800px;
+ height:500px;
+ margin:0 auto;
+ position: relative;  
+ /*
+ 자식요소가 absolute 이면 부모는 relative 요소를 가지고 있어야함 
+ absolute 가 기준으로 삼아야할 부모 요소는 relative 속성을 가지고 있어야만 기준이 될 수 있다.
+ */
+}
+h1 { 
+  color:#fff; 
+  font-size:120px;
+  text-shadow: 2px 3px 0 #000;   
+  position: absolute;  /*원하는 위치에 자유롭게 이동시키기 위해서 필요함*/
+  right: 100px;   /*오른쪽으로부터 얼마큼 떨어졌는가*/
+  bottom: 100px;  /*바닥에서부터 얼마큼 떨어졌는가*/
+  /*relative 부모 요소 안에서 이동 가능*/
+}
