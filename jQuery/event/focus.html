@@ -8,36 +8,42 @@
     <script src="https://code.jquery.com/jquery-1.12.4.js"
         integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
     <title>Document</title>
+    <style>
+        .color {
+            background-color: aqua;
+        }
+    </style>
     <script>
-        $(function () {
-            $('#user_id_1, #user_pw_1').on('focus', function () {
-                $(this).css({
-                    'background-color': 'pink'
-                })
-            })
-            $('#user_id_1, #user_pw_1').on('blur', function () {
-                $(this).css({
-                    'background-color': '#fff'
-                })
-            })
+        /*  $(function () {
+             $('#user_id_1, #user_pw_1').on('focus', function () {
+                 $(this).css({
+                     'background-color': 'pink'
+                 })
+             })
+             // focus out Event
+             $('#user_id_1, #user_pw_1').on('blur', function () {
+                 $(this).css({
+                     'background-color': '#fff'
+                 })
+             })
 
-            $('#frm_2').on('focusin', function () {
-                $(this).css({
-                    'background-color': 'green'
-                })
-            })
-            $('#frm_2').on('focusout', function () {
-                $(this).css({
-                    'background-color': '#fff'
-                })
-            })
-        })
+             $('#frm_2').on('focusin', function () {
+                 $(this).css({
+                     'background-color': 'green'
+                 })
+             })
+             $('#frm_2').on('focusout', function () {
+                 $(this).css({
+                     'background-color': '#fff'
+                 })
+             })
+         }) */
     </script>
 </head>
 
 <body>
     <h1>focus / blur</h1>
-    <form action="#">
+    <form action="#" id='frm_1'>
         <p>
             <label for="user_id_1">ID<input type="text" id="user_id_1"></label>
         </p>
@@ -51,7 +57,25 @@
         <p><label for="user_id_2">ID<input type="text" id="user_id_2"></label></p>
         <p><label for="user_pw_2">PASSWORD<input type="password" id="user_pw_2"></label></p>
     </form>
+    <script>
+        const form1 = document.querySelector('#frm_1');
+        const user_id = document.querySelector('#user_id_1');
+        const user_pw = document.querySelector('#user_pw_1');
+        user_id.addEventListener('focusin', () => {
+            user_id.classList.add('color');
+        })
+        user_id.addEventListener('focusout', () => {
+            user_id.classList.remove('color');
+        })
 
+        user_pw.addEventListener('focus', () => {
+            user_pw.classList.add('color');
+        })
+
+        user_pw.addEventListener('blur', () => {
+            user_pw.classList.remove('color');
+        })
+    </script>
 </body>
 
 </html>

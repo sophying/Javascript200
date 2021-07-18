@@ -22,4 +22,31 @@
 
     /* inside(들여쓰기) , outside(default) */
     list-style-position: inside;
+
+
+    /*==================== flex ====================*/
+    /*가로로 정렬 할 때 */
+    display: flex;  
+    /*flex 상태에서 왼쪽부터 정렬*/
+    justify-content: flex-start;
+    /*flex 상태에서 오른쪽 부터 정렬*/
+    justify-content: flex-end;
+    /*flex 상태에서 가로로 중앙 정렬*/
+    justify-content: center;
+
+    /*flex 상태에서 세로로 정렬 가장 위*/
+    align-items: flex-start;
+    /*flex 상태에서 세로로 정렬 가장 아래*/
+    align-items: flex-end;
+    /*flex 상태에서 세로로 정렬 가운데*/
+   align-items: center;
+
+   /*flex 상태에서 세로로 기준을 하여 여러개의 content 를 정렬 할 때*/
+   align-content: flex-start;
+   align-content: flex-end;
+   align-content: center;
+   /*처음과 끝 배치 후 중간 항목*/
+   align-content: space-between;
+   /*전체 항목 동일한 간격*/
+   align-content: space-around;
 }

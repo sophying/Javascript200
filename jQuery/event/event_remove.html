@@ -7,11 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-1.12.4.js"
         integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
-    <script>
+    <!-- <script>
         $(function () {
             $('.btn_1').on('mouseover', function () {
                 alert('hello');
             });
+
             $(document).on('mouseover', '.btn_2', function () {
                 alert('welcome');
             });
@@ -30,7 +31,7 @@
 
 
         })
-    </script>
+    </script> -->
     <title>Document</title>
 </head>
 
@@ -42,6 +43,41 @@
         <button class="del_1">버튼1 Event Remove</button>
         <button class="del_2">버튼2 Event Remove</button>
     </p>
+    <script>
+        'use strict';
+        const btn_1 = document.querySelector('.btn_1');
+        const del_1 = document.querySelector('.del_1');
+        const wrap = document.querySelector('#wrap');
+        const removeTest = () => {
+            console.log('javascript hello')
+        }
+        btn_1.addEventListener('mouseover', removeTest);
+        del_1.addEventListener('click', () => {
+            btn_1.removeEventListener('mouseover', removeTest);
+        })
+
+        // 태그 만들기 element 
+        const p = document.createElement('p');
+        const button = document.createElement('button');
+        button.setAttribute('class', 'btn_2');
+        button.textContent = `버튼2`;
+
+        // p태그에 button태그 담기 
+        p.appendChild(button);
+        wrap.appendChild(p);
+
+        // 한번만 실행 
+        const btn_2 = document.querySelector('.btn_2');
+        btn_2.addEventListener('mouseover', () => {
+            alert('once true')
+        }, { once: true })
+
+
+
+
+
+
+    </script>
 </body>
 
 </html>

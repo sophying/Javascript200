@@ -8,28 +8,36 @@
     <script src="https://code.jquery.com/jquery-1.12.4.js"
         integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
     <script>
-        $(function () {
-            $('.btn_wrap').delegate('.btn_1.on', 'mouseover focus', function () {
-                alert('hello');
-            })
-            $('.btn_1').addClass('on');
-
-            // $([document|이벤트 대상의 상위 요소 선택]).on('이벤트 종류','이벤트대상선택',function(){})
-            // .one() 라이브이벤트 등록 방식 - 이벤트는 1회만 말생 
-            $(document).one('mouseover focus', '.btn_2.on', function () {
-                alert('welcome');
-            })
-            $('btn_2').addClass('on');
-        })
+        /*         $(function () {
+                    $('.btn_wrap').delegate('.btn_1.on', 'mouseover focus', function () {
+                        alert('hello');
+                    })
+                    $('.btn_1').addClass('on');
+        
+                    // $([document|이벤트 대상의 상위 요소 선택]).on('이벤트 종류','이벤트대상선택',function(){})
+                    // .one() 라이브이벤트 등록 방식 - 이벤트는 1회만 말생
+                    $(document).one('mouseover focus', '.btn_2.on', function () {
+                        alert('welcome');
+                    })
+                    $('btn_2').addClass('on');
+                }) */
     </script>
     <title>Document</title>
 </head>
 
 <body>
     <div id="wrap">
-        <p class='btn_wrap'><button class="btn_1">버튼1</button></p>
+        <p class='btn_wrap'><button class="btn_1" data-id='btn_1'>버튼1</button></p>
         <p><button class="btn_2">버튼2</button></p>
     </div>
+    <script>
+        const btn_wrap = document.querySelector('.btn_wrap');
+        btn_wrap.addEventListener('mouseover', (event) => {
+            console.log(event.target.dataset.id);
+            const id = event.target.dataset.id;
+            if(id) alert('=== hello');
+        })
+    </script>
 </body>
 
 </html>

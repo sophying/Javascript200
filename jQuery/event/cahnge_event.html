@@ -8,11 +8,13 @@
     <script src="https://code.jquery.com/jquery-1.12.4.js"
         integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
     <script>
-        $(function () {
-            $('#rel_site').on('change', function () {
-                $('.txt').text($(this).val());
-            });
-        })
+        /*         $(function () {
+                    $('#rel_site').on('change', function () {
+                        $('.txt').text($(this).val());
+                    });
+                })
+         */
+
     </script>
     <title>Document</title>
 </head>
@@ -25,6 +27,14 @@
         <option value="www.daum.net">다음</option>
     </select>
     <p class="txt"></p>
+    <script>
+        // jQuery -> Javascript 로 변경 
+        const rel_site = document.querySelector('#rel_site');
+        rel_site.addEventListener('change', function () {
+            const text = document.querySelector('.txt');
+            text.innerHTML = this.value;
+        })
+    </script>
 </body>
 
 </html>

@@ -9,7 +9,7 @@
         integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
     <title>Document</title>
     <script>
-        $(function () {
+        /* $(function () {
             let baseFontSize = 14;
             $('.zoomBtnZone button').on('click', zoomInOut);
             function zoomInOut() {
@@ -28,20 +28,39 @@
                 $('body').css({ fontSize: baseFontSize + 'px' })
             }
 
-        })
+        }) */
     </script>
 </head>
 
 <body>
     <p class="zoomBtnZone">
-        <button class='zoomOutBtn'>-</button>
-        <button class='originBtn'>100%</button>
-        <button class='zoomInBtn'>+</button>
+        <button class='zoomOutBtn' data-id='outBtn'>-</button>
+        <button class='originBtn' data-id='originBtn'>100%</button>
+        <button class='zoomInBtn' data-id='inBtn'>+</button>
     </p>
     <p class="fontSize">14px</p>
     <div id="wrap">
         글자 크기를 줄이고 확대하는 것을 내맘대로 해볼까요~?!!!
     </div>
+    <script>
+        let fontSize = 14;
+        const zoomBtnZone = document.querySelector('.zoomBtnZone');
+        zoomBtnZone.addEventListener('click', (event) => {
+            if (event.target.dataset.id === 'outBtn') {
+                if (fontSize <= 8) return false;
+                fontSize--;
+            } else if (event.target.dataset.id === 'inBtn') {
+                if (fontSize >= 20) return false;
+                fontSize++;
+            } else {
+                fontSize = 14;
+            }
+            const sizeText = document.querySelector('.fontSize');
+            const body = document.querySelector('body');
+            sizeText.innerHTML = `${fontSize}px`;
+            body.style.fontSize = `${fontSize}px`
+        })
+    </script>
 </body>
 
 </html>
