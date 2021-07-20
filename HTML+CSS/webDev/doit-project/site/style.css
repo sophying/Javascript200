@@ -1,3 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+:root{
+    /* color */
+    --color-clean-pink: #f48fb1;
+    --color-dark-pink: #bf5f82;
+    --color-pink: #ffc1e3;
+    --color-light-pink: #fce4ec;
+
+}
 *{
     /* 모든 요소 초기화 값 */
     margin: 0;
@@ -15,7 +24,7 @@
 header{
     width: 100%;
     height: 100px;
-    background-color: blue;
+    background-color: var(--color-clean-pink);
 }
 
 /* logo 영역 */
@@ -23,15 +32,89 @@ header{
     float: left;
     width: 250px;
     height: 100px;
-    background-color: indigo;
+    line-height: 100px;
+    padding-left: 20px;
+    /* background-color: indigo; */
 }
+
+#logo h1{
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700px;
+    font-size: 40px;
+    color: #fff;
+    text-shadow: 0 1px 0 #222;
+}
+
+a{
+    text-decoration: none;
+}
+
 
 /* nav */
 nav{
     float: right;
     width: 900px;
     height: 100px;
-    background-color: green;
+    padding-top: 40px;
+    /* background-color: green; */
+}
+
+ul{
+    list-style: none;
+}
+
+#topMenu{
+    height: 60px;
+}
+
+#topMenu>li{
+    float: left;
+    position: relative;
+}
+
+#topMenu>li>ul{
+    display: none;
+    position: absolute;
+    width: 160px;
+    background-color: rgba(255,255, 255, 0.6);
+    left: 20px;
+    margin: 0;
+}
+
+#topMenu>li>ul>li{
+    padding: 10px 10px 10px 30px;
+}
+
+#topMenu>li>ul>li>a{
+    font-size: 14px;
+    padding: 10px;
+    color: #000;
+}
+
+#topMenu>li:hover>ul{
+    display: block;
+    z-index: 10;
+}
+
+#topMenu>li>ul>li>a:hover{
+    color: #f00;
+}
+
+#topMenu>li>a{
+    display: block;
+    color: #fff;
+    font-weight: 600px;
+    text-shadow: 0 1px var(--color-pink);
+    padding: 20px 60px;
+}
+
+#topMenu>li>a>span{
+    font-size: 0.5em;
+}
+
+#topMenu>li> a:hover{
+    color: #000;
+    text-shadow: 0 -1px var(--color-pink);
 }
 
 /* image slide show  */
@@ -39,14 +122,60 @@ nav{
     clear: both;
     width: 100%;
     height: 300px;
-    background-color: orange;
+    /* background-color: orange; */
     overflow: hidden;
+    position: relative;
+}
+
+#slides{
+    position: absolute;
+}
+
+#slides >img{
+    width: 100%;
+    float: left;
+    display: block;
+}
+
+button { 
+    position: absolute;
+    width: 90px;
+    height: 100%;
+    top: 0;
+    border: none;
+    padding: 20px;
+    background-color: transparent;
+    color: #000;
+    font-weight: 800px;
+    font-size: 24px;
+    opacity: 0.5;
+}
+
+#prev{
+    left: 0;
+}
+
+#next{
+    right: 0;
+
+}
+
+button:hover{
+    background-color: #222;
+    color: #fff;
+    opacity: 0.6;
+    cursor:pointer
+}
+
+button:focus{
+    outline: 0;
 }
 
 /* contest */
 #contents{
     width: 100%;
     height: 300px;
+    margin-top: 20px;
 }
 
 /* tab menu */
@@ -54,19 +183,164 @@ nav{
     float: left;
     width: 600px;
     height: 100%;
-    background-color: violet;
+    margin-top: 10px;
+    /* background-color: violet; */
 }
 
+#tabMenu input[type='radio']{
+    display: none; /*라디오 버튼 감춤*/
+}
+
+#tabMenu label{
+    display: inline-block;
+    margin: 0 0;
+    padding: 15px 25px;
+    font-weight: 600px;
+    text-align: center;
+    color: #aaa;
+    border: 1px solid transparent;
+}
+
+#tabMenu label:hover{
+    color: #222;
+    cursor: pointer;
+}
+
+#tabMenu input:checked + label{
+    color: #fff;
+    border: 1px solid #ddd;
+    background-color: var(--color-clean-pink);
+}
+
+.tabContent{
+    display: none;
+    padding: 20px 0 0;
+    border-top: 1px solid var(--color-dark-pink);
+}
+
+.tabContent h2{
+    display: none;
+}
+
+#tab1:checked~#notice,
+#tab2:checked~#gallery{
+    display: block;
+}
+
+#notice ul{
+    list-style: disc;
+    margin-left: 30px;
+}
+
+#notice ul li{
+    font-size: 16px;
+    line-height: 2.5;
+}
+
+#gallery ul li{
+    display: inline;
+}
+
+/* 퀵 링크  */
 #links{
     float: right;
     width: 600px;
     height: 100%;
-    background-color: skyblue;
+    margin-top: 15px;
+    /* background-color: skyblue; */
+}
+
+#links ul{
+    padding: 0;
+    overflow: hidden; /*넘치는 항목 감춤*/
+}
+
+#links ul li{
+    float: left; /*가로로 배치*/
+    width: 33%;
+    text-align: center;
+    margin: 10px 0;
+}
+
+#links ul li a span{
+    display: block;
+    margin: 0 auto;
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    border: 1px solid var(--color-clean-pink);
+    line-height: 150px;
+}
+
+#quick__icon1{
+    background-image: url('./images/icon-1.jpg');
+}
+
+#quick__icon2{
+    background-image: url('./images/icon-2.jpg');
+}
+
+#quick__icon3{
+    background-image: url('./images/icon-3.jpg');
+}
+
+#links ul li a p{
+    margin-top: 15px;
+    font-size: 20px;
+    color: #666;
 }
 
 /* footer */
 footer{
     width: 100%;
     height: 100px;
-    background-color: gray;
+    border-top: 2px solid #222;
+    /* background-color: gray; */
+}
+
+#bottomMenu{
+    width: 100%;
+    height: 20px;
+    position: relative;
+}
+
+#bottomMenu ul{
+    margin-top: 15px;
+}
+
+#bottomMenu ul li{
+    float: left; /*가로 정렬*/
+    padding: 5px 20px;
+    border-right: 1px solid #ddd;
+}
+
+#bottomMenu ul li:last-child{
+    border-right: none; /*마지막 요소에는 오른쪽 테두리 제거*/
+}
+
+#bottomMenu ul li a,
+#bottomMenu ul li:visited{
+    font-size: 15px;
+    color: #666;
+}
+
+#sns{
+    position: absolute;
+    right: 0; /*오른쪽 으로 배치*/
+}
+
+#sns ul li{
+    border-right: none;
+    padding: 5px;
+}
+
+#company{
+    clear: left;  /* = clear: both*/
+    margin-top: 25px;
+    margin-left: 20px;
+}
+
+p{
+    font-size: 14px;
+    color: #aaa;
 }
